@@ -1,0 +1,134 @@
+.navbar {
+    background-color: #ADB2D4 !important;
+    /* Green */
+    width: 100%;
+    /* Ensure full width */
+    padding: 15px 20px;
+    /* Add some padding */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: white !important;
+    /* Make text white */
+}
+
+.navbar .nav-link:hover {
+    color: yellow !important;
+    /* Change color on hover */
+}
+
+body {
+    background-color: #C7D9DD;
+    color: #ffffff;
+}
+
+
+
+
+/* * CSS for the box layout
+ * This layout uses absolute positioning to create overlapping boxes
+ * with different z-index values to control the stacking order.
+ */
+/* * The boxes are styled with a background color, opacity, and border radius
+ */
+/* Ensures the container takes the full screen */
+.container_ {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Common box styles */
+/* Common box styles */
+.box {
+    position: absolute;
+    background-color: #ADB2D4;
+    opacity: 0.9;
+    border-radius: 15px;
+
+    display: flex;
+    /* Enables flexbox */
+    flex-direction: column;
+    /* Stacks elements */
+    /* Centers vertically */
+    align-items: center;
+    /* Centers horizontally */
+
+    /* text-align: center; */
+    /* Centers text inside */
+}
+
+.box:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Box 1: Largest, scales with viewport */
+.box1 {
+    padding: 2%;
+    width: 40vw;
+    /* 40% of viewport width */
+    height: 40vw;
+    /* Make it square */
+    top: 5vh;
+    /* Position relative to viewport */
+    left: 5vw;
+    z-index: 3;
+}
+
+/* Box 2: Slightly smaller, overlaps bottom-right corner */
+.box2 {
+    padding: 2%;
+    width: 30vw;
+    /* 30% of viewport width */
+    height: 30vw;
+    top: calc(15vh + 20vw);
+    /* Moves down */
+    left: calc(15vw + 20vw);
+    /* Moves right */
+    z-index: 2;
+}
+
+/* Box 3: Smallest, overlaps bottom-right of Box 2 */
+.box3 {
+    padding: 2%;
+    width: 20vw;
+    height: 20vw;
+    top: calc(25vh + 20vw + 15vw);
+    /* Moves further down */
+    left: calc(25vw + 20vw + 15vw);
+    /* Moves further right */
+    z-index: 1;
+}
+
+/* Make it more responsive for smaller screens */
+@media (max-width: 768px) {
+    .box1 {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .box2 {
+        width: 35vw;
+        height: 35vw;
+        top: calc(20vh + 25vw);
+        left: calc(20vw + 25vw);
+    }
+
+    .box3 {
+        width: 25vw;
+        height: 25vw;
+        top: calc(25vh + 25vw + 17vw);
+        left: calc(25vw + 25vw + 17vw);
+    }
+}
+
+/* * CSS for the text layout
+ * This layout uses flexbox to center the text within the boxes.
+ */
+/* .center-text {
+    text-align: center;
+    Center text
